@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Kosugi');
+/* ページ全体の最大幅を設定し中央寄せにする場合 */
+#root {
+  max-width: 1920px; /* 必要に応じて調整 */
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-image: 
+  linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), /* 0.5は透明度。調整可 */
+  url('/background.png');
+  background-size: contain;
+  font-family:'Helvetica', 'Kosugi', 'Noto Sans JP', sans-serif; /*欧文フォントには日本語が含まれないので、先頭に置くことで後の日本語フォントが指定される*/
+}
+
+.Header {
+  width: 100vw;
+  aspect-ratio: 1533/ 664; 
+  background-image: url('/header.jpg'); /* publicフォルダの画像は先頭に/を付ける */
+  background-size: contain;           /* 画像全体を表示し、はみ出さない */
+  background-position: center;
+  background-repeat: no-repeat;  /* 画像の繰り返しを防ぐ */
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative; /* 疑似要素を重ねるために必要 */
+}
+
+.thread-title{
+  color: rgb(0, 0, 0);
+  margin-left: 10px;
+  margin-top: 20px; /*これを設定しないと自動的に余白が生まれる*/
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-family: 'Noto Sans JP';
+}
+
+table {
+  margin: 0 auto;
+  border-collapse:  collapse;     /* セルの線を重ねる */
+}
+
+.countryThreads{
+  border: solid 1px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 5px;
+}
+
+.countryThreads img{
+  width: 32px;
+  vertical-align: middle; 
+}
+
+.threads{
+  border: solid 1px; 
+  width: 70vw;
+  font-size: 25px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.threads:hover{
+  background-color: rgba(255, 255, 255, 0);
+  text-decoration-line: underline;
+  text-decoration-color:dimgray;
+}
+
+/* PC */
+@media screen and (min-width: 768px){
+	/* PCに適用するCSS*/
+  .thread-title{
+    font-size: 60px;
+  }
+  .countryThreads img{
+    width: 70px;
+  }
+  .threads{
+    font-size: 45px;
+  }
+}
+/* Tablet */
+@media screen and (max-width:768px) and (min-width: 480px){
+	/* タブレット画面に適用するCSS*/
+  .thread-title{
+    font-size: 50px;
+  }
+  .countryThreads img{
+    width: 50px;
+  }
+  .threads{
+    font-size: 35px;
+  }
+}
