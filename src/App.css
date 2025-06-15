@@ -13,6 +13,7 @@
   font-family:'Helvetica', 'Kosugi', 'Noto Sans JP', sans-serif; /*欧文フォントには日本語が含まれないので、先頭に置くことで後の日本語フォントが指定される*/
 }
 
+/*ThreadList.jsx*/
 .Header {
   width: 100vw;
   aspect-ratio: 1533/ 664; 
@@ -27,12 +28,37 @@
 }
 
 .thread-title{
+  display: inline-block;
   color: rgb(0, 0, 0);
   margin-left: 10px;
   margin-top: 20px; /*これを設定しないと自動的に余白が生まれる*/
   margin-bottom: 5px;
   font-size: 30px;
   font-family: 'Noto Sans JP';
+}
+
+button {
+  display: block;
+  float: right;
+  margin-top: 35px;
+  margin-right: 10px;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-family: 'Noto Sans JP';
+  font-weight: bold;
+  color: white;
+  background-color:#cbd299;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color:#919a45;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
 }
 
 table {
@@ -57,13 +83,37 @@ table {
   font-size: 25px;
   padding: 5px;
   background-color: rgba(255, 255, 255, 1);
+  transition: background-color 0.5s; 
 }
 
 .threads:hover{
   background-color: rgba(255, 255, 255, 0);
   text-decoration-line: underline;
   text-decoration-color:dimgray;
+  transition: background-color 0.5s;
 }
+
+
+
+/*CreateThreads.jsx*/
+
+.threadsForm{
+  padding-left: 15px;
+  font-size: 20px;
+}
+
+.threadsFormTitle{
+  width: 90vw;
+  height: 20px;
+  font-size: 20px;
+}
+
+.threadsForm select{
+    max-width: 80vw;
+  }
+
+
+
 
 /* PC */
 @media screen and (min-width: 768px){
@@ -77,6 +127,22 @@ table {
   .threads{
     font-size: 45px;
   }
+  button {
+    font-size: 20px;
+    padding: 12px 24px;
+    margin-top: 40px;
+    margin-right: 50px;
+  }
+  .threadsForm{
+    font-size: 30px;
+  }
+  .threadsFormTitle{
+    font-size: 30px;
+    height: 40px;
+  }
+  .threadsForm select{
+    font-size: 20px;
+  }
 }
 /* Tablet */
 @media screen and (max-width:768px) and (min-width: 480px){
@@ -89,5 +155,21 @@ table {
   }
   .threads{
     font-size: 35px;
+  }
+  button {
+    font-size: 15px;
+    padding: 9px 18px;
+    margin-top: 45px;
+    margin-right: 20px;
+  }
+  .threadsForm{
+    font-size: 30px;
+  }
+  .threadsFormTitle{
+    font-size: 30px;
+    height: 40px;
+  }
+  .threadsForm select{
+    font-size: 20px;
   }
 }
