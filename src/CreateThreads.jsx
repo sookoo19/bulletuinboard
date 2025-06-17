@@ -105,7 +105,7 @@ export const CreateThreads = () => {
             </form>
             <br />
             <Link to="/threads">
-            TOPに戻る
+            TOPへ
             </Link>
         </div>
     );

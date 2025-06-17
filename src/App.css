@@ -14,7 +14,7 @@
 }
 
 /*ThreadList.jsx*/
-.Header {
+.header-bg-link{
   width: 100vw;
   aspect-ratio: 1533/ 664; 
   background-image: url('/header.jpg'); /* publicフォルダの画像は先頭に/を付ける */
@@ -113,6 +113,84 @@ table {
   }
 
 
+/*PostList*/
+.post-title{
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  margin-left: 0px;
+  margin-top: 20px; /*これを設定しないと自動的に余白が生まれる*/
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-family: 'Noto Sans JP';
+}
+
+.table_and_form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.postTableWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postTable{
+  margin: 0 0 0 20px;
+  margin-top: 20px;
+  min-width: 200px;
+}
+
+.postTableRow{
+  border-collapse:  collapse;     /* セルの線を重ねる */
+  border: solid 1px; 
+  padding: 5px 10px;
+  height: 50px;
+}
+
+.page{
+  font-size: small;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.pageButton{
+  display: inline-block;
+  float: none;
+  margin-right: 0;
+}
+
+.pageButton:disabled {
+  background-color: #ccc;  /* 無効時の色 */
+  color: #888;             /* 無効時の文字色 */
+  cursor: not-allowed;
+}
+
+.postFormWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postForm{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.textForm{
+  display: block;
+  float: right;
+  width: 150px;
+  height: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.postForm_button{
+  display: block;
+  margin-right: 20px;
+  margin-top: 10px;
+}
 
 
 /* PC */
@@ -133,6 +211,7 @@ table {
     margin-top: 40px;
     margin-right: 50px;
   }
+
   .threadsForm{
     font-size: 30px;
   }
@@ -143,6 +222,17 @@ table {
   .threadsForm select{
     font-size: 20px;
   }
+
+  .page{
+  font-size: large;
+  }
+  .textForm{
+  width: 300px;
+  height: 200px;
+}
+.postTable{
+  min-width: 350px;
+}
 }
 /* Tablet */
 @media screen and (max-width:768px) and (min-width: 480px){
@@ -162,6 +252,7 @@ table {
     margin-top: 45px;
     margin-right: 20px;
   }
+
   .threadsForm{
     font-size: 30px;
   }
@@ -171,5 +262,13 @@ table {
   }
   .threadsForm select{
     font-size: 20px;
+  }
+
+  .page{
+  font-size: medium;
+  }
+  .textForm{
+    width: 200px;
+    height: 150px;
   }
 }

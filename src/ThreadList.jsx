@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 export const ThreadList = () => {
     const [threads, setThreads] = useState([]);
@@ -41,6 +43,7 @@ export const ThreadList = () => {
             <table>
                 <tbody>
                     {threads.slice(0, 10).map((thread) => (
+                        console.log(thread),
                         <tr key={thread.id}>
                             <td className="countryThreads">
                                 {/* 国コードがある場合は国旗、ない場合はデフォルト画像 */}
@@ -57,7 +60,9 @@ export const ThreadList = () => {
                             </span>
                             </td>
                             <td className="threads">
+                                <Link to={`/threads/${thread.id}`}>
                                 {thread.title}
+                                </Link>                            
                             </td>
                         </tr>
                     ))}
